@@ -7,15 +7,15 @@ const initialState = {
 const cakeSlice = createSlice({
     name: 'cake',
     initialState,
-    reducer: {
-        order: (stae) => {
+    reducers: {
+        ordered: (state) => {
             state.numberOfCakes--
         },
         restocked: (state, action) => {
-            state.numberOfCakes += action.payload,
-        },
+            state.numberOfCakes += action.payload
+        }
     }
 })
 
-module.exports = cakeSlice,reducer;
-module.exports.cakeAction = cakeSlice.actions
+module.exports = cakeSlice.reducer;
+module.exports.cakeActions = cakeSlice.actions;
