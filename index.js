@@ -5,7 +5,8 @@ const icecreamActions = require('./features/icecream/icecreamSlice').icecreamAct
 console.log('initial state =>', store.getState());
 
 const unsubscribe = store.subscribe(() => {
-    console.log('updated State =>', store.getState())
+    //logger middleware do this job
+    // console.log('updated State =>', store.getState())
 })
 
 
@@ -22,3 +23,5 @@ store.dispatch(icecreamActions.ordered())
 
 
  store.dispatch(cakeActions.restocked(5))
+
+ unsubscribe()
